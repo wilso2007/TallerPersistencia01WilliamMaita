@@ -7,26 +7,9 @@ namespace Persistencia01
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("TALLER SECCION B");
-			
-			//Creamos un directorio
-			
-				string rutaRaiz = Path.Combine(AppDomain .CurrentDomain .BaseDirectory ,"DATOS IUJO");
-				string rutaReportes = Path.Combine (rutaRaiz,"reportes");
-				
-				Console.WriteLine (rutaRaiz);
-				Console .WriteLine (rutaReportes);
-				
-				if(Directory .Exists (rutaReportes )){
-					Directory.CreateDirectory (rutaReportes );
-					Console .WriteLine ("directorio creado correctamente");
-				}
-				
 			// DESAFIO 1:
-			
-			Console.WriteLine("DESAFIO 1:");
 				
-				Console.Write("Ingrese usuario;clave: ");
+				Console.WriteLine("Ingrese usuario;clave: ");
 			string entrada = Console.ReadLine(); 
 			
 			
@@ -57,8 +40,6 @@ namespace Persistencia01
 			
 			//DESAFIO 2:
 			
-			Console.WriteLine("DESAFIO 2:");
-			
 			    string origen = "avatar.jpg";
 				string destino = "respaldo.jpg";
 				
@@ -78,24 +59,22 @@ namespace Persistencia01
 				            fsDestino.Write(buffer, 0, bytesLeidos);
 				        }
 				    }
-				    Console.WriteLine("[OK] Imagen clonada exitosamente como 'respaldo.jpg'.");
+				    Console.WriteLine("Imagen clonada exitosamente como 'respaldo.jpg'.");
 				}
 				else
 				{
-				    Console.WriteLine("[ERROR] No se encontró el archivo 'avatar.jpg'.");
-				    Console.WriteLine("Por favor, coloca una imagen con ese nombre en la carpeta Debug.");
+				    Console.WriteLine(" No se encontró el archivo 'avatar.jpg'.");
+				    Console.WriteLine("Por favor coloca una imagen con ese nombre en la carpeta Debug.");
 				}
 				
 				// DESAFIO 3:
-				
-			Console.WriteLine("DESAFIO 3:");
 			
 				string rutaCarpeta = Directory.GetCurrentDirectory();
 				string[] archivos = Directory.GetFiles(rutaCarpeta);
 				
 				Console.WriteLine("Escaneando archivos en: " + rutaCarpeta);
 				
-				// Aquí el cambio de 'en' por 'in'
+		
 				foreach (string archivo in archivos)
 				{
 				    FileInfo informacion = new FileInfo(archivo);
@@ -104,17 +83,13 @@ namespace Persistencia01
 				    {
 				        if (informacion.Extension != ".exe" && informacion.Extension != ".cs")
 				        {
-				            Console.WriteLine("[!] Borrando archivo pesado: " + informacion.Name + " (" + informacion.Length + " bytes)");
-				            // File.Delete(archivo); 
+				            Console.WriteLine("Borrando archivo pesado: " + informacion.Name + " (" + informacion.Length + " bytes)");
 				        }
 				    }
 				}
-				Console.WriteLine("[OK] Escaneo finalizado.");
+				Console.WriteLine("Escaneo finalizado.");
 				
 				
-								
-					
-			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
